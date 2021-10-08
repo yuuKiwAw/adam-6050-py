@@ -11,5 +11,6 @@ RUN apt-get gcc g++
 RUN apt-get install git
 
 RUN apt-get install -y python3.8.5
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple wheel
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pycparser
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pythonnet
