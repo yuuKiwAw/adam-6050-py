@@ -10,7 +10,7 @@ class AdamSet(object):
     Args:
         object ([type]): [description]
     """
-    def __init__(self, ip ="192.168.0.198", port = "502", channel = "22"):
+    def __init__(self, ip = "192.168.0.198", port = "502", channel = "22"):
         """init values
         Args:
             ip (str, optional): adammodbus ip setting. Defaults to "192.168.0.198".
@@ -32,13 +32,11 @@ class AdamSet(object):
         """
         adam_modbus = AdamClass()
         adam_modbus.Adam6050Status(self.ip, self.port, self.channel, 0)
-        
+
 
 def terminalSelect():
     adam = AdamSet()
-    
     print("plz input set:")
-    
     while True:
         c = input()
         if c == "1":
