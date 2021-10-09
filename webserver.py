@@ -16,7 +16,7 @@ app = FastAPI()
 class Modebus_set(BaseModel):
     ip: str = "192.168.0.198"
     port: str = "502"
-    channel: str = "22"
+    channel: str = "5"
 
 
 # 跨域
@@ -29,21 +29,21 @@ app.add_middleware(
 )
 
 
-@app.get("/adam6050/{value}")
-async def set_adam_value(value: int):
+@app.get("/adam6050/{channelval}/{value}")
+async def set_adam_value(channelval: int, value: int):
     adam_modbus = AdamClass()
     mbset = Modebus_set()
     
     if value == 0:
         try:
-            adam_modbus.Adam6050Status(mbset.ip, mbset.port, mbset.channel, 0)
-            return {"msg": "set value " + str(value)}
+            adam_modbus.Adam6050Status(mbset.ip, mbset.port, channelval, 0)
+            return {"msg": {"value ": str(value),"channel ": str(channelval)}}
         except Exception as ex:
             return {"error": ex}
     elif value == 1:
         try:
-            adam_modbus.Adam6050Status(mbset.ip, mbset.port, mbset.channel, 1)
-            return {"msg": "set value " + str(value)}
+            adam_modbus.Adam6050Status(mbset.ip, mbset.port, channelval, 1)
+            return {"msg": {"value ": str(value),"channel ": str(channelval)}}
         except Exception as ex:
             return {"error": ex}
     else:
