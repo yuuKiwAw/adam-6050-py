@@ -16,7 +16,7 @@ app = FastAPI()
 class Modebus_set(BaseModel):
     ip: str = "192.168.0.198"
     port: str = "502"
-    channel: str = "5"
+    channel: str = "22"
 
 
 # 跨域
