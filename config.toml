@@ -1,0 +1,9 @@
+title = "adamserver-setting"
+
+[adam6050setting]
+ip = "192.168.0.198"
+port = "502"
+
+[webserver]
+ip = "localhost"
+port = "8000"
