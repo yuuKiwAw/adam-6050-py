@@ -8,6 +8,7 @@
 # TO-DO
 - 2021.10.09 add webserver
 - 2021.10.11 add toml config file
+- 2021.10.13 add docker steps and docker export images
 
 # Docker
 - sudo docker import - adam_server_211031 < adam_server_211031.tar
